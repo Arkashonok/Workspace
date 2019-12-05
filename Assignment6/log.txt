@@ -1,0 +1,56 @@
+Last login: Wed Dec  4 14:16:32 on ttys000
+arkadiymish@Arkadiy-MacBook-Air ~ % cd Desktop/3140
+arkadiymish@Arkadiy-MacBook-Air 3140 % SQLite3 mydb.db        
+SQLite version 3.28.0 2019-04-15 14:49:49
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> .open mydb.db
+sqlite> CREATE TABLE [Sample] (
+	[Timestamp] VARCHAR(100)  NOT NULL,
+	[WasOrganized] INTEGER  NOT NULL,
+	[WasClearly] INTEGER  NOT NULL,
+	[WasEnthusiastic] INTEGER  NOT NULL,
+	[DoYouLearned] INTEGER  NOT NULL,
+	[WhatLearned] VARCHAR(300)  NOT NULL, 
+	[WhatWorked] VARCHAR(300)  NOT NULL,
+	[WhatChange] VARCHAR(300)  NOT NULL,
+	[ExtraComments] VARCHAR(300)  NULL
+);
+sqlite> .tables
+Sample
+sqlite> .mode csv
+sqlite> .import /Users/arkadiymish/Downloads/sample.csv Sample
+sqlite> .schema sample
+CREATE TABLE [Sample] (
+[Timestamp] VARCHAR(100)  NOT NULL,
+[WasOrganized] INTEGER  NOT NULL,
+[WasClearly] INTEGER  NOT NULL,
+[WasEnthusiastic] INTEGER  NOT NULL,
+[DoYouLearned] INTEGER  NOT NULL,
+[WhatLearned] VARCHAR(300)  NOT NULL, 
+[WhatWorked] VARCHAR(300)  NOT NULL,
+[WhatChange] VARCHAR(300)  NOT NULL,
+[ExtraComments] VARCHAR(300)  NULL
+);
+sqlite> DELETE FROM Sample WHERE WasEnthusiastic='Presenter was enthusiastic about the topic.';
+
+sqlite> select AVG(WasOrganized) from sample;
+1
+sqlite> select MIN(WasEnthusiastic) from sample;
+1
+sqlite> select MAX(WasEnthusiastic) from sample;
+5
+sqlite> .output results.txt
+sqlite> .header on
+sqlite> .mode column
+sqlite> select MIN(WasEnthusiastic) from Sample;
+sqlite> select MAX(WasEnthusiastic) from Sample;
+sqlite> select AVG(WasEnthusiastic) from Sample;
+sqlite> select MAX(WasClearly) from Sample;
+sqlite> select MIN(WasClearly) from Sample;
+sqlite> select AVG(WasClearly) from Sample;
+sqlite> select MIN(WasOrganized) from Sample;
+sqlite> select MAX(WasOrganized) from Sample;
+sqlite> select AVG(WasOrganized) from Sample;
+sqlite> .quit
