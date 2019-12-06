@@ -1,0 +1,27 @@
+1. Downloaded pandoc for MacOS from pandoc.org
+
+2. Installed it through regular installation.
+
+2. Went to terminal to check pandoc version:
+   pandoc --version
+
+3. Created repository for pandoc:
+   mkdir pandoc-test
+
+4. Went to that repository:
+   cd pandoc-test
+
+5. Opened my TextEdit, insert text from my Reflection.txt file in there
+
+6. Addoped this text to markdown format by changing its syntaxes.
+
+7. Saved this file as Reflection.md
+
+8. In my terminal converted Reflection.md to Reflection.html format
+   pandoc Reflection.md -f markdown -t html -s -o Reflection.html
+
+9. converted Reflection.md to Reflection.docx format
+   pandoc Reflection.md -s -o Reflection.docx
+
+10. downloaded MacTex to be able to convert Reflection.md to Reflection.pdf
+   pandoc pandoc Reflection.md -s -o Reflection.pdf
