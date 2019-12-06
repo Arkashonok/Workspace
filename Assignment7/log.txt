@@ -1,0 +1,95 @@
+Last login: Thu Dec  5 21:22:31 on ttys000
+arkadiymishcenko@Arkadiys-iMac ~ % ssh amishche@146.245.252.151
+Access to Brooklyn College computers is restricted to authorized users
+        and approved educational and research purposes, only.
+amishche@146.245.252.151's password: 
+Last login: Mon Sep  9 14:19:22 2019 from 146.245.236.60
+[amishche@websol01 ~]$ mkdir svn
+[amishche@websol01 ~]$ cd svn
+[amishche@websol01 svn]$ svnadmin create repo
+[amishche@websol01 svn]$ mkdir test
+[amishche@websol01 svn]$ cd test
+[amishche@websol01 test]$ pwd
+/users1/st/amishche/svn/test
+[amishche@websol01 test]$ svn checkout file:///users1/st/amishche/svn/repo .
+Checked out revision 0.
+[amishche@websol01 test]$ nano Makefile
+program:
+        javac HelloWorld.java
+        java HelloWorld
+
+[amishche@websol01 test]$ svn add Makefile
+A         Makefile
+
+[amishche@websol01 test]$ nano HelloWorld.java
+class HelloWorld { 
+    public static void main(String args[]) { 
+        System.out.println("Hello, World"); 
+    } 
+} 
+[amishche@websol01 test]$ svn add HelloWorld.java
+A         HelloWorld.java
+
+[amishche@websol01 test]$ make
+javac HelloWorld.java
+java HelloWorld
+Hello, World
+
+[amishche@websol01 test]$ svn status
+?       HelloWorld.class
+A       HelloWorld.java
+A       Makefile
+
+[amishche@websol01 test]$ svn diff
+Index: HelloWorld.java
+===================================================================
+--- HelloWorld.java	(revision 0)
++++ HelloWorld.java	(working copy)
+@@ -0,0 +1,6 @@
++class HelloWorld {
++ 
++    public static void main(String args[])  { 
++        System.out.println("Hello, World"); 
++    } 
++}
+Index: Makefile
+===================================================================
+--- Makefile	(revision 0)
++++ Makefile	(working copy)
+@@ -0,0 +1,3 @@
++program:
++	javac HelloWorld.java
++	java HelloWorld
+
+[amishche@websol01 test]$ svn commit -m "first commit"
+Adding         HelloWorld.java
+Adding         Makefile
+Transmitting file data ..
+Committed revision 1.
+[amishche@websol01 test]$ nano HelloWorld.java
+[amishche@websol01 test]$ make
+javac HelloWorld.java
+java HelloWorld
+Hello, World World World
+[amishche@websol01 test]$ svn status
+?       HelloWorld.class
+M       HelloWorld.java
+
+[amishche@websol01 test]$ svn diff
+Index: HelloWorld.java
+===================================================================
+--- HelloWorld.java	(revision 1)
++++ HelloWorld.java	(working copy)
+@@ -1,6 +1,6 @@
+ class HelloWorld {
+  
+     public static void main(String args[])  { 
+-        System.out.println("Hello, World"); 
++        System.out.println("Hello, World World World"); 
+     } 
+ }
+
+[amishche@websol01 test]$ svn commit -m "changed HelloWorld.java"
+Sending        HelloWorld.java
+Transmitting file data .
+Committed revision 2.
