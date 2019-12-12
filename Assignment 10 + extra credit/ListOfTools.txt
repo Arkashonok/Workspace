@@ -1,0 +1,48 @@
+Arkadiy Mishchenko 
+------------------
+
+### LIST OF TOOLS
+
+***Visual Studio Code***
+
+-   Used to write code, and display changes by using virtual
+    environment.
+-   Pros: Provides just the tools a developer needs for a quick code
+    build.
+-   Cons: Does not show changes when you pull the code.
+
+***MySQL Workbench***
+
+-   Used to create a relational databse.
+-   Pros: Easy to design database using GUI.
+-   Cons: Complicated for begginers.
+
+***GitHub***
+
+-   Used to push and pull code between members.
+-   Pros: Easy to see changes and get changes.
+-   Cons: Some times it is hard to push the code.
+
+***Whats App***
+
+-   Used to communicate to the team
+-   Pros: Nice and simple. You can send files through it.
+-   Cons: Needs to be connected to your phone number.
+
+***Slack***
+
+-   Used to communicate with the whole team.
+-   Pros: Able to comunicate from web and mobile app.
+-   Cons: Does not have notifications for web version.
+
+***Youtube***
+
+-   Used to watch tutorials.
+-   Pros: Has tons of videos for everything.
+-   Cons: Sometimes interrapting by commercial.
+
+***StackOverflow***
+
+-   Used to find coding questions.
+-   Pros: Forum type so you can ask questions too.
+-   Cons: Sometimes spent a lot of time to find an answer.
